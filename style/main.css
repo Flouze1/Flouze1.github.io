@@ -1,0 +1,437 @@
+/* Основные стили для header */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+/* Логотип в левом верхнем углу */
+#logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Поисковая строка по центру */
+#Searched-string {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+#searching {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+#searching input[type="search"] {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searching input[type="search"]:focus {
+    border-color: #8a4f00;
+    box-shadow: 0 0 5px rgba(138, 79, 0, 0.3);
+}
+
+#searching button {
+    padding: 10px 20px;
+    background-color: #8a4f00;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+#searching button:hover {
+    background-color: #6d3d00;
+}
+
+/* Кнопки перехода справа */
+#next-pages {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+#next-pages a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+#next-pages a:hover {
+    transform: scale(1.1);
+}
+
+#next-pages img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* Main layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    padding: 20px;
+    min-height: calc(100vh - 180px);
+}
+
+#sidebar {
+    grid-column: 1;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#catalog {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#sort {
+    margin-bottom: 15px;
+}
+
+#sort select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Сетка товаров - КАК В PACK_LUNCH.CSS */
+#list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.product {
+    width: 250px;
+    height: 400px;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+.product:hover {
+    border: 2px solid tomato;
+}
+
+.product-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.product-image {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    background-color: #f8f8f8;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.product-name {
+    font-size: 18px;
+    color: #222;
+    flex-grow: 1;
+    text-align: center;
+    line-height: 1.3;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.product-rating {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0;
+    color: #333;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.product-rating::before {
+    content: "★";
+    color: #ff9800;
+    font-size: 18px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.product-actual-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+.product-discount-price {
+    font-size: 16px;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.add-button {
+    background-color: #f1eee9;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    color: #1b1612;
+    transition: background-color 0.2s;
+}
+
+.add-button:hover {
+    background-color: #e0dcd6;
+}
+
+/* Скрываем ненужные элементы */
+.product-main-category,
+.product-sub-category,
+.product-created-at {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    #list {
+        gap: 20px;
+    }
+    
+    .product {
+        width: 230px;
+        padding: 20px 25px;
+    }
+    
+    .product-image {
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 15px;
+    }
+    
+    #sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 100%;
+    }
+    
+    #catalog {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    #list {
+        gap: 15px;
+    }
+    
+    .product {
+        width: 200px;
+        padding: 18px 22px;
+    }
+    
+    .product-image {
+        height: 120px;
+        border-radius: 12px;
+    }
+    
+    .product-name {
+        font-size: 16px;
+        min-height: 45px;
+    }
+    
+    .product-rating,
+    .product-actual-price {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    #list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .product {
+        width: 100%;
+        max-width: 280px;
+        padding: 20px;
+    }
+    
+    .product-image {
+        height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        max-width: 250px;
+        padding: 15px;
+    }
+    
+    .product-image {
+        height: 110px;
+        border-radius: 10px;
+    }
+    
+    .product-name {
+        font-size: 15px;
+        min-height: 40px;
+    }
+    
+    .product-rating,
+    .product-actual-price {
+        font-size: 16px;
+    }
+    
+    .add-button {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+}
+
+/* Стили для фильтров в сайдбаре */
+.simple-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-block p {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-block label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-block input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.price-inputs label {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.price-inputs input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.buttons button[type="submit"] {
+    background-color: #8a4f00;
+    color: white;
+}
+
+.buttons button[type="submit"]:hover {
+    background-color: #6d3d00;
+}
+
+.buttons button[type="reset"] {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.buttons button[type="reset"]:hover {
+    background-color: #e0e0e0;
+}
